@@ -1,0 +1,15 @@
+{
+    "name": "Hotel Machine",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "appId": "",
+            "id": "95f2bab0-7999-11e8-8171-597fb8178583",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "http://localhost:3979/api/messages",
+            "name": "http://localhost:3979/api/messages"
+        }
+    ]
+}
