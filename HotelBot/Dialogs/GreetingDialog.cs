@@ -17,7 +17,6 @@ namespace HotelBot.Dialogs
 			await context.PostAsync("Hello i am ishan's Bot");
 			await Respond(context);
 			context.Wait(MessageReceivedAsync);
-			//
 		}
 
 		private static async Task Respond(IDialogContext context)
