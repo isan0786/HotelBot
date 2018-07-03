@@ -14,6 +14,7 @@ namespace HotelBot.Dialogs
 		[LuisModel("c912806b-eac6-4c1c-95f9-761ac06c34c0", "e3edeec6f8bc4add95fb05136dd42beb")]
 
 	[Serializable]
+
 	public class LUISDialog: LuisDialog<RoomReservation>
 	{
 		private readonly BuildFormDelegate<RoomReservation> ReserveRoom;
@@ -28,7 +29,7 @@ namespace HotelBot.Dialogs
 		{
 			await context.PostAsync("I'm sorry i don't know what you mean");
 			context.Wait(MessageReceived);
-		}
+		} 
 
 		[LuisIntent("Greeting")]
 		public async Task Greeting(IDialogContext context, LuisResult result)
@@ -42,14 +43,14 @@ namespace HotelBot.Dialogs
 			context.Wait(MessageReceived);
 		}
 
-		[LuisIntent("RoomReservation")]
+		[LuisIntent("ReserveRoom")]
 		public async Task RoomReservation(IDialogContext context, LuisResult result)
 		{
 			var enrollmentForm = new FormDialog<RoomReservation>(new RoomReservation(), this.ReserveRoom, FormOptions.PromptInStart);
 			context.Call<RoomReservation>(enrollmentForm,Callback);
 		}
 
-		[LuisIntent("QueryAmenities")]
+		[LuisIntent("QueryAmenites")]
 		public async Task QueryAmenities(IDialogContext context, LuisResult result)
 		{
 			foreach (var entity in result.Entities.Where(Entity => Entity.Type == "Amenity"))
